@@ -32,7 +32,7 @@ export const photos: Photo[] = [
     actualDate: '02/02/2025',
     location: 'Cupertino, CA',
     message: 'A group of escape room professionals who totally escaped on time. (Oh and boba)',
-    coordinates: [37.4220587, -122.1710134]
+    coordinates: [37.324458, -122.010994]
   },
   {
     id: 4,
