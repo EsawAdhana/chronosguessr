@@ -20,7 +20,6 @@ import 'leaflet/dist/leaflet.css';
 import { differenceInDays, addDays, format } from 'date-fns';
 import { photos } from '../data/photos';
 import type { Photo } from '../data/photos';
-import { useCustomToast } from '../hooks/useCustomToast';
 import React from 'react';
 import { keyframes } from '@emotion/react';
 
