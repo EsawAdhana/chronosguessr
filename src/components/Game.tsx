@@ -11,12 +11,10 @@ import {
   SliderFilledTrack,
   SliderThumb,
   Flex,
-  Progress,
-  useColorModeValue,
   IconButton,
 } from '@chakra-ui/react';
 import { MapContainer, TileLayer, Marker, useMapEvents, Polyline, useMap, Popup } from 'react-leaflet';
-import type { LeafletMouseEvent, LeafletEvent } from 'leaflet';
+import type { LeafletMouseEvent } from 'leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { differenceInDays, addDays, format } from 'date-fns';
@@ -81,7 +79,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
-function LocationPicker({ locationGuess, setLocationGuess, setHasPlacedPin }: { locationGuess: LocationGuess, setLocationGuess: (loc: LocationGuess) => void, setHasPlacedPin: (placed: boolean) => void }) {
+function LocationPicker({ setLocationGuess, setHasPlacedPin }: { setLocationGuess: (loc: LocationGuess) => void, setHasPlacedPin: (placed: boolean) => void }) {
   useMapEvents({
     click(e: LeafletMouseEvent) {
       setLocationGuess({ lat: e.latlng.lat, lng: e.latlng.lng });
@@ -137,7 +135,6 @@ export const Game = () => {
   const [hasPlacedPin, setHasPlacedPin] = useState(false);
   const [dateIndex, setDateIndex] = useState<number>(0);
   const [isMapFullscreen, setIsMapFullscreen] = useState(false);
-  const { showToast } = useCustomToast();
   const [showResult, setShowResult] = useState(false);
   const [lastResult, setLastResult] = useState<{
     actual: Photo;
@@ -363,7 +360,7 @@ export const Game = () => {
                       attribution="&copy; OpenStreetMap contributors"
                     />
                     <Marker position={[locationGuess.lat, locationGuess.lng] as [number, number]} icon={markerIcon} />
-                    <LocationPicker locationGuess={locationGuess} setLocationGuess={setLocationGuess} setHasPlacedPin={setHasPlacedPin} />
+                    <LocationPicker setLocationGuess={setLocationGuess} setHasPlacedPin={setHasPlacedPin} />
                   </MapContainer>
                   {!isMapFullscreen && (
                     <IconButton
@@ -435,7 +432,7 @@ export const Game = () => {
                       attribution="&copy; OpenStreetMap contributors"
                     />
                     <Marker position={[locationGuess.lat, locationGuess.lng] as [number, number]} icon={markerIcon} />
-                    <LocationPicker locationGuess={locationGuess} setLocationGuess={setLocationGuess} setHasPlacedPin={setHasPlacedPin} />
+                    <LocationPicker setLocationGuess={setLocationGuess} setHasPlacedPin={setHasPlacedPin} />
                   </MapContainer>
                 </Box>
               </Flex>
