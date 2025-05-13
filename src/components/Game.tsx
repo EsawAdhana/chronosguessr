@@ -254,7 +254,7 @@ export const Game = () => {
                 letterSpacing="tight"
                 fontWeight="extrabold"
               >
-                HAPPY BIRTHDAY ANGELINA!!!
+                HAPPY BIRTHDAY, ANGELINA!!!
              </Heading>
               
               <Text 
