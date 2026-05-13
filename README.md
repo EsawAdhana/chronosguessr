@@ -1,33 +1,10 @@
 # chronosguessr
 
-A personalized location and date guessing game. Open-source spin on [TimeGuessr](https://timeguessr.com).
+An open-source [TimeGuessr](https://timeguessr.com) clone, with photos pulled from spots around Northern California. Players guess both where and when the photo was taken. Originally built as a birthday present.
 
-## Overview
-
-Players guess where and when photos were taken at various locations in Northern California. Originally built as a birthday present.
-
-## Stack
-
-- Vite + React + TypeScript
-- Chakra UI
-- Leaflet (maps)
-- Framer Motion
-- `date-fns`
-
-## Getting started
+Vite + React + TypeScript, Chakra UI, Leaflet for the maps, Framer Motion for transitions.
 
 ```bash
 npm install
 npm run dev
 ```
-
-Build for production:
-
-```bash
-npm run build
-npm run preview
-```
-
-## Status
-
-Finished gift project.
